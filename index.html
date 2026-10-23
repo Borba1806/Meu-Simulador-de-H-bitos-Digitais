@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Redes Sociais</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <div class="icone">📱</div>
+
+    <h1>Seu tempo nas redes sociais</h1>
+    <p class="descricao">
+      Descubra quanto tempo você dedica às redes sociais
+      e reflita sobre seus hábitos digitais.
+    </p>
+
+    <label for="horas">Quantas horas por dia você passa nas redes?</label>
+
+    <div class="entrada">
+      <input
+        type="number"
+        id="horas"
+        min="0"
+        max="24"
+        step="0.5"
+        placeholder="Ex.: 5"
+      >
+      <span>horas/dia</span>
+    </div>
+
+    <button id="calcular">Calcular meu tempo</button>
+
+    <section id="resultado" aria-live="polite" hidden></section>
+
+    <p class="rodape">
+      Use a tecnologia com consciência. Seu tempo importa! 💙
+    </p>
+  </main>
+</body>
+</html>
+
