@@ -4,191 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Descubra quanto tempo você dedica às redes sociais e reflita sobre seus hábitos digitais."
-  >
-
-  <meta name="theme-color" content="#080b16">
-
-  <title>Digital Balance | Seu tempo importa</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
+  <title>Simulador de Redes Sociais</title>
   <link rel="stylesheet" href="style.css">
-
   <script src="script.js" defer></script>
 </head>
-
 <body>
   <main class="container">
+    <div class="icone">📱</div>
 
-    <!-- Cabeçalho -->
-    <header class="cabecalho">
-      <div class="marca">
-        <div class="marca-icone">◈</div>
+    <h1>Seu tempo nas redes sociais</h1>
+    <p class="descricao">
+      Descubra quanto tempo você dedica às redes sociais
+      e reflita sobre seus hábitos digitais.
+    </p>
 
-        <div class="marca-texto">
-          <span class="marca-nome">DIGITAL BALANCE</span>
-          <span class="marca-subtitulo">Consciência digital</span>
-        </div>
-      </div>
+    <label for="horas">Quantas horas por dia você passa nas redes?</label>
 
-      <span class="status">
-        <span class="status-ponto"></span>
-        SEU TEMPO, SUA ESCOLHA
-      </span>
-    </header>
+    <div class="entrada">
+      <input
+        type="number"
+        id="horas"
+        min="0"
+        max="24"
+        step="0.5"
+        placeholder="Ex.: 5"
+      >
+      <span>horas/dia</span>
+    </div>
 
-    <!-- Apresentação -->
-    <section class="apresentacao">
-      <div class="icone">📱</div>
+    <button id="calcular">Calcular meu tempo</button>
 
-      <p class="etiqueta">DESCUBRA SEUS HÁBITOS</p>
+    <section id="resultado" aria-live="polite" hidden></section>
 
-      <h1>
-        Você controla<br>
-        seu tempo ou <span>o feed?</span>
-      </h1>
-
-      <p class="descricao">
-        Cada minuto conectado conta. Descubra quanto tempo
-        você dedica às redes sociais e veja como pequenas
-        mudanças podem transformar sua rotina.
-      </p>
-    </section>
-
-    <!-- Formulário -->
-    <section class="calculadora" aria-labelledby="titulo-calculo">
-
-      <div class="secao-titulo">
-        <span class="numero-secao">01</span>
-
-        <div>
-          <h2 id="titulo-calculo">Sua rotina digital</h2>
-          <p>Informe seu tempo médio diário de uso.</p>
-        </div>
-      </div>
-
-      <label for="horas">
-        Quanto tempo você passa nas redes por dia?
-      </label>
-
-      <div class="entrada">
-        <span class="entrada-icone" aria-hidden="true">◷</span>
-
-        <input
-          type="number"
-          id="horas"
-          min="0"
-          max="24"
-          step="0.5"
-          placeholder="0"
-          inputmode="decimal"
-          aria-describedby="ajuda-horas"
-          required
-        >
-
-        <span class="unidade">HORAS / DIA</span>
-      </div>
-
-      <p id="ajuda-horas" class="ajuda">
-        Considere Instagram, TikTok, Facebook e outras redes.
-      </p>
-
-      <button id="calcular" type="button">
-        <span>Calcular meu tempo</span>
-        <span class="seta" aria-hidden="true">↗</span>
-      </button>
-
-      <p class="privacidade">
-        <span aria-hidden="true">✦</span>
-        Uma reflexão sobre seus hábitos, sem julgamentos.
-      </p>
-
-    </section>
-
-    <!-- Estatísticas ilustrativas -->
-    <section class="referencias" aria-labelledby="titulo-referencias">
-
-      <div class="referencias-cabecalho">
-        <div>
-          <p class="etiqueta">PONTOS DE REFERÊNCIA</p>
-          <h2 id="titulo-referencias">Seu tempo em perspectiva</h2>
-        </div>
-
-        <span class="referencias-icone" aria-hidden="true">↗</span>
-      </div>
-
-      <div class="estatisticas">
-
-        <article class="estatistica">
-          <div class="estatistica-topo">
-            <span class="estatistica-icone roxo">◷</span>
-            <span class="estatistica-legenda">REFERÊNCIA</span>
-          </div>
-
-          <p class="estatistica-valor">4<span>h/dia</span></p>
-
-          <p class="estatistica-descricao">
-            Média usada neste simulador
-          </p>
-        </article>
-
-        <article class="estatistica">
-          <div class="estatistica-topo">
-            <span class="estatistica-icone azul">⌁</span>
-            <span class="estatistica-legenda">ALERTA</span>
-          </div>
-
-          <p class="estatistica-valor">6<span>h/dia</span></p>
-
-          <p class="estatistica-descricao">
-            Parâmetro de atenção do projeto
-          </p>
-        </article>
-
-      </div>
-
-      <p class="nota-dados">
-        Valores de referência didáticos fornecidos na atividade.
-        Não representam recomendações médicas universais.
-      </p>
-
-    </section>
-
-    <!-- Resultado do JavaScript -->
-    <section
-      id="resultado"
-      aria-live="polite"
-      aria-atomic="true"
-      hidden
-    ></section>
-
-    <!-- Mensagem final -->
-    <footer class="rodape">
-      <div class="rodape-linha"></div>
-
-      <p class="frase-final">
-        A vida acontece <span>fora da tela.</span>
-      </p>
-
-      <p class="rodape-descricao">
-        Um projeto educativo sobre consciência e equilíbrio digital.
-      </p>
-
-      <p class="assinatura">
-        DIGITAL BALANCE <span>•</span> PROJETO EDUCACIONAL
-      </p>
-    </footer>
-
+    <p class="rodape">
+      Use a tecnologia com consciência. Seu tempo importa! 💙
+    </p>
   </main>
 </body>
 </html>
